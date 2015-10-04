@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<appender name="UnirFicheros" class="org.apache.log4j.RollingFileAppender">
+		<param name="MaxFileSize" value="100KB" />
+		<param name="MaxBackupIndex" value="5" />
+		<param name="Threshold" value="TRACE" />
+		<param name="File" value="log/salida.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %-5p [%c{1}] %m %n" />
+		</layout>
+	</appender>
+    <root>
+	<appender-ref ref="UnirFicheros" />
+    </root>
+</log4j:configuration>
