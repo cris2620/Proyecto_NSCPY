@@ -28,6 +28,7 @@ public class IntEnt001_Login extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel2.setForeground(new java.awt.Color(0, 0, 255));
         jLabel2.setText("¿Olvido su nombre de usuario o contraseña?");
