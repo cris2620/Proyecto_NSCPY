@@ -1,0 +1,8 @@
+2015-10-31 23:57:01,043 DEBUG [ConexionMySQL] Error start: SI_NSCPY, Usuario: admin, pwd: admin 
+2015-10-31 23:57:03,075 DEBUG [ConexionMySQL] Error start: SI_NSCPY, Usuario: admin, pwd: admin 
+2015-10-31 23:57:05,111 DEBUG [ConexionMySQL] Error start: SI_NSCPY, Usuario: admin, pwd: admin 
+2015-10-31 23:57:07,126 DEBUG [ConexionMySQL] Error start: SI_NSCPY, Usuario: admin, pwd: admin 
+2015-10-31 23:57:09,158 DEBUG [ConexionMySQL] Error start: SI_NSCPY, Usuario: admin, pwd: admin 
+2015-11-01 14:03:31,887 DEBUG [ConexionMySQL] Error  UpdateSQL: INSERT INTO alergias (AleCod, AleNom) VALUES ('1','Penicilina');" 
+2015-11-01 14:04:08,439 DEBUG [ConexionMySQL] Error  UpdateSQL: DELETE INTO alergia WHERE AleCod='1';" 
+2015-11-01 14:05:41,154 DEBUG [ConexionMySQL] Error  UpdateSQL: INSERT INTO alergia (AleCod, AleNom) VALUES ('1','Penicilina');" 
