@@ -434,6 +434,84 @@ public class ConexionMySQL {
     }
     
     /**
+     * Devuelve el resultado de una consulta a un Arraylist con una cantidad de parametros determinado
+     * @param statement consulta en MySQL
+     * @param cantParams cantidad de parametros a consultar
+     * @return retorna una ArrayList de String[] con la consulta
+     */
+    
+    public ArrayList<String[]> queryMySQL( String statement, int cantParams){
+        ArrayList<String[]> rpt = new ArrayList<>();
+        String[] obj = new String[cantParams];
+        try {
+            preStatement = conexion.prepareStatement(statement);
+            result = preStatement.executeQuery();
+            while(result.next()){
+                for (int i = 0; i < cantParams; i++) {
+                    obj[i] = result.getString(i+1);
+                }
+                rpt.add(obj);
+            }
+        } 
+        catch (SQLException ex) {
+            LOGGER.debug("Error queryMySQL: "+ statement);
+        }
+        return rpt;
+    }
+    
+    /**
+     * Devuelve el resultado de una consulta a un Arraylist
+     * @param nameTable Nombre de la tabla MySQL
+     * @param stat      Atributo Consultado
+     * @param condicion Condicion que deben cumplir los registros para ser eliminados
+     * @return          ArrayList respuesta
+     */
+    public ArrayList<String> queryMySQL( String nameTable ,String stat, String condicion){
+        ArrayList<String> rpt = new ArrayList<>();
+        String statement = "SELECT " + stat + " FROM " + nameTable;
+        if(condicion.trim().length() != 0){
+            statement+=" WHERE " + condicion;
+        }  
+        try {
+            preStatement = conexion.prepareStatement(statement);
+            result = preStatement.executeQuery();
+            while(result.next()){  
+                rpt.add(result.getString(1));
+            }
+        } 
+        catch (SQLException ex) {
+            LOGGER.debug("Error queryMySQL: "+ statement);
+        }
+        return rpt;
+    }
+    
+    /**
+     * Devuelve el primer elemento de una consulta
+     * @param nameTable Nombre de la tabla MySQL
+     * @param stat      Atributo Consultado
+     * @param condicion Condicion que deben cumplir los registros para ser eliminados
+     * @return          ArrayList respuesta
+     */
+    public String queryOneEleMySQL( String nameTable ,String stat, String condicion){
+        String rpt="";
+        String statement = "SELECT " + stat + " FROM " + nameTable;
+        if(condicion.trim().length() != 0){
+            statement+=" WHERE " + condicion;
+        }  
+        try {
+            preStatement = conexion.prepareStatement(statement);
+            result = preStatement.executeQuery(); 
+            result.next();
+            rpt = result.getString(1);
+            
+        } 
+        catch (SQLException ex) {
+            LOGGER.debug("Error queryOneEleMySQL: "+ statement);
+        }
+        return rpt;
+    }
+    
+    /**
      * Funcion que facilita la Eliminacion de Registros
      * Solo se ingresan los datos de la condicion
      * DELETE FROM tableSQL WHERE condicion;

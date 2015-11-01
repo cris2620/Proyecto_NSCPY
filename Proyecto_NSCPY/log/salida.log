@@ -6,3 +6,8 @@
 2015-11-01 14:03:31,887 DEBUG [ConexionMySQL] Error  UpdateSQL: INSERT INTO alergias (AleCod, AleNom) VALUES ('1','Penicilina');" 
 2015-11-01 14:04:08,439 DEBUG [ConexionMySQL] Error  UpdateSQL: DELETE INTO alergia WHERE AleCod='1';" 
 2015-11-01 14:05:41,154 DEBUG [ConexionMySQL] Error  UpdateSQL: INSERT INTO alergia (AleCod, AleNom) VALUES ('1','Penicilina');" 
+2015-11-01 17:52:10,980 DEBUG [ConexionMySQL] Error queryOneEleMySQL: SELECT UsuLog FROM usuario WHERE UsuLog=0001 AND UsuPwd=40102 
+2015-11-01 17:53:23,058 DEBUG [ConexionMySQL] Error queryOneEleMySQL: SELECT UsuLog FROM usuario WHERE UsuLog=0001 AND UsuPwd=40102 
+2015-11-01 17:54:10,466 DEBUG [ConexionMySQL] Error queryOneEleMySQL: SELECT UsuLog FROM usuario WHERE UsuLog='0001' AND UsuPwd='40102' 
+2015-11-01 18:01:33,818 DEBUG [ConexionMySQL] Error queryOneEleMySQL: SELECT UsuLog FROM usuario WHERE UsuLog='sadada' AND UsuPwd='ad'; 
+2015-11-01 18:01:37,752 DEBUG [ConexionMySQL] Error queryOneEleMySQL: SELECT UsuLog FROM usuario WHERE UsuLog='IsabelOvi' AND UsuPwd='ad'; 

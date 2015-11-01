@@ -1,4 +1,5 @@
 package Aplicacion;
+import Conexion.ConexionMySQL;
 import Interface.Entrada.*;
 import de.javasoft.plaf.synthetica.*;
 import javax.swing.UIManager;
@@ -19,7 +20,7 @@ public class StartAplication {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new IntEnt001_Login().setVisible(true);
+                new GUI_Login(new ConexionMySQL("admin", "admin", "SI_NSCPY")).setVisible(true);
             }
         });
     }
