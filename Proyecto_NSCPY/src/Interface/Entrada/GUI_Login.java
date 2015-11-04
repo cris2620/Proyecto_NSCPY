@@ -1,6 +1,6 @@
 package Interface.Entrada;
 
-import Conexion.ConexionMySQL;
+import conexion.ConexionMySQL;
 import Interface.Usuarios.GUI_PanelDirector;
 import javax.swing.JOptionPane;
 
@@ -57,6 +57,11 @@ public class GUI_Login extends javax.swing.JFrame {
 
         bSalir.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         bSalir.setText("Salir");
+        bSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bSalirActionPerformed(evt);
+            }
+        });
 
         bAceptar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         bAceptar.setText("Aceptar");
@@ -154,6 +159,10 @@ public class GUI_Login extends javax.swing.JFrame {
         }
                
     }//GEN-LAST:event_bAceptarActionPerformed
+
+    private void bSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSalirActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_bSalirActionPerformed
 
     //variables staticas
     public static final int DIRECTOR = 1;

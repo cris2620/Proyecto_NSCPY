@@ -1,5 +1,5 @@
 package Aplicacion;
-import Conexion.ConexionMySQL;
+import conexion.ConexionMySQL;
 import Interface.Entrada.*;
 import de.javasoft.plaf.synthetica.*;
 import javax.swing.UIManager;

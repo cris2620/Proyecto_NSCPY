@@ -1,4 +1,4 @@
-import Conexion.ConexionMySQL;
+import conexion.ConexionMySQL;
 import java.util.ArrayList;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
  * @author Christian
  */
 public class TConexionSQL {
-    Conexion.ConexionMySQL conect;
+    conexion.ConexionMySQL conect;
     ArrayList<String> array1;
     ArrayList<String> array2;
     public TConexionSQL() {
@@ -157,7 +157,7 @@ public class TConexionSQL {
         //director
         array1.clear();
         array1.add("DirCod");
-        array1.add("DirResMac");
+        array1.add("DirResMag");
         array1.add("PerCod");
         array1.add("ConCod");
         array1.add("EstCod");
