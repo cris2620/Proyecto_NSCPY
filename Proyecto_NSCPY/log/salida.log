@@ -12,3 +12,4 @@
 2015-11-01 18:01:33,818 DEBUG [ConexionMySQL] Error queryOneEleMySQL: SELECT UsuLog FROM usuario WHERE UsuLog='sadada' AND UsuPwd='ad'; 
 2015-11-01 18:01:37,752 DEBUG [ConexionMySQL] Error queryOneEleMySQL: SELECT UsuLog FROM usuario WHERE UsuLog='IsabelOvi' AND UsuPwd='ad'; 
 2015-11-02 12:17:40,270 DEBUG [ConexionMySQL] Error putJComboBox: SELECT CodSex , CodNom FROM sexo 
+2015-11-05 20:26:05,805 DEBUG [ConexionMySQL] Error queryOneEleMySQL: SELECT UsuLog FROM usuario WHERE UsuLog='root' AND UsuPwd='rott'; 

@@ -130,5 +130,121 @@ public class ToolsSwing {
         arrayEle.addAll(jlistToArray(list));
         arrayEle.remove(element);
         list.setModel(arrListToDefListModel(arrayEle));
-    }    
+    }
+    
+    /**
+     * Verifica si todos los caracteres de un String son numeros
+     * @param sentence  Sentencia a evaluar
+     * @return          Retorna true si Es un numero entero y false en caso contrario
+     */
+    public static boolean isNumber(String sentence){
+        if(sentence.length() == 0) 
+            return false;
+        for(int i=0;i<sentence.length();i++){
+            if(!Character.isDigit(sentence.charAt(i))){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    /**
+     * Verifica si todos los caracteres de un String son letras Mayusculas o Minusculas ademas de considerar el espacio en blanco
+     * @param sentence  Sentencia a evaluar
+     * @return          Retorna true si Es un cadena de letras y false en caso contrario
+     */
+    public static boolean isLetter(String sentence){
+        for(int i=0;i<sentence.length();i++){
+            if(!Character.isLetter(sentence.charAt(i)) && sentence.charAt(i) != ' '){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    /**
+     * Verifica si todos los caracteres de un String son numeros y ademas solamente un punto "punto decimal"
+     * @param sentence  Sentencia a evaluar
+     * @return          Retorna true si Es un numero decimal o entero y false en caso contrario
+     */
+    public static boolean isDecimalNumber(String sentence){
+        if(sentence.length() == 0){
+            return false;
+        }
+        boolean point = false;
+        for(int i=0;i<sentence.length();i++){
+            if(sentence.charAt(i) =='.'){
+                if(point){
+                    return false;
+                }
+                else{
+                    point = true;
+                    continue;
+                }
+            }
+            if(!Character.isDigit(sentence.charAt(i))){
+                return false;
+            }
+        }
+        if(point){
+            if(sentence.charAt(0) == '.' || sentence.charAt(sentence.length()-1) == '.'){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    /**
+     * Verifica se un caracter esta contenido en el arrays de caracteres (Fuerza Bruta)
+     * @param filter    Array donde se encuentran los valores validos
+     * @param character Caracter a evaluar
+     * @return          Retorna true si el caracter se encuentra en el filtro, false en caso contrario
+     */
+    private static boolean contains(char[] filter, char character){
+       for(int i =0;i<filter.length;i++){
+           if(character == filter[i]){
+               return true;
+           }
+       }
+       return false;
+    }
+    
+    /**
+     * Agrupa dos arrays en el orden c=a+b
+     * @param a primer array
+     * @param b segundo array
+     * @return  retorna un array con todos los elementos de a y b
+     */
+    public static char[] Agrupar(char[] a, char[] b){
+        char[] fusion = new char[a.length + b.length];
+        System.arraycopy(a, 0, fusion, 0, a.length);
+        System.arraycopy(b, 0, fusion, a.length, b.length);
+        return fusion;
+    }
+    
+    /**
+     * Verifica si una cadena cumple que todos sus elementos se encuentran en las restricciones
+     * @param contrains Restricciones de caracteres almacenados en un char[]
+     * @param sentence  Sentencia a evaluar
+     * @return          Retorna true si la sentencia se encuentra en el filtro, false en caso contrario
+     */
+    public static boolean limitCharacters(char[] contrains, String sentence){
+        for(int i =0;i<sentence.length();i++){
+            if(!contains(contrains, sentence.charAt(i))){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    //Arrays tipo char que almacenan grupos de caracteres con un criterio en comun
+    public static final char[] LETTERS = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','ñ',
+                                            'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','Ñ'};
+    public static final char[] LETTERS_MINUS = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','ñ'};
+    public static final char[] LETTERS_MAYUS = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','Ñ'};
+    public static final char[] NUMBERS = {'0','1','2','3','4','5','6','7','8','9'};
+    public static final char[] LETTERS_NUMBERS = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','ñ',
+                                                    'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','Ñ',
+                                                        '0','1','2','3','4','5','6','7','8','9'};
+    public static final char[] SIMBOLS = {'!','\"','#','$','%','&','/','(',')','=','\'','?','\\','¿','¡','´','¨','+','*','~','{','[','^','}',']','`',',',';','.',':','-','_','@','°','|','¬','<','>'};
 }
