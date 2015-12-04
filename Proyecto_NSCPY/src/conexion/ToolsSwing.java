@@ -61,10 +61,14 @@ public class ToolsSwing {
     public static String getUrlFile(){
         final JFileChooser window = new JFileChooser();
         File fileSelected;
-        String url;
-        window.showOpenDialog(window);
-        fileSelected = window.getSelectedFile();
-        url = fileSelected.getAbsolutePath();
+        String url = "";
+        try {
+            window.showOpenDialog(window);
+            fileSelected = window.getSelectedFile();
+            url = fileSelected.getAbsolutePath();
+        } 
+        catch (Exception e) {
+        }
         return url;    
     }
     
