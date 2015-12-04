@@ -450,7 +450,7 @@ public class ConexionMySQL {
                 for (int i = 0; i < cantParams; i++) {
                     obj[i] = result.getString(i+1);
                 }
-                rpt.add(obj);
+                rpt.add(clone(obj));
             }
         } 
         catch (SQLException ex) {
@@ -650,7 +650,11 @@ public class ConexionMySQL {
             LOGGER.debug("Error putJComboBox: "+ statement);
             return false;
         }  
-    }         
+    }
+    
+    public String[] clone (String[] obj){
+        String[] temp = new String[obj.length];
+        System.arraycopy(obj, 0, temp, 0, temp.length);
+        return temp;
+    }
 }
-
-
