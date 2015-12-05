@@ -36,6 +36,7 @@ public class GUI_Login extends javax.swing.JFrame {
         bAceptar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Login NSCPY");
         setResizable(false);
 
         jLabel2.setForeground(new java.awt.Color(0, 0, 255));
